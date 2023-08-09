@@ -1,0 +1,68 @@
+var data = {
+                    "tbdata": [
+                        {
+                            "companyCode": "1000",
+                            "year": "2023",
+                            "ledger": "L01",
+                            "glaccount": "100100001",
+                            "period": "Jan",
+                            "lc": "USD",
+                            "gc": "USD",
+                            "source": "SRC",
+                            "profitCenter": "PROFIT-001",
+                            "costCenter": "COST-001",
+                            "businessArea": "BA-001",
+                            "division": "DV",
+                            "functionalArea": "FA-001",
+                            "chartOfAccounts": "COA1"
+                        },
+                        {
+                            "companyCode": "2000",
+                            "year": "2023",
+                            "ledger": "L01",
+                            "glaccount": "200100001",
+                            "period": "Jan",
+                            "lc": "EUR",
+                            "gc": "USD",
+                            "source": "SRC",
+                            "profitCenter": "PROFIT-002",
+                            "costCenter": "COST-002",
+                            "businessArea": "BA-002",
+                            "division": "DV",
+                            "functionalArea": "FA-002",
+                            "chartOfAccounts": "COA2"
+                        },
+                        {
+                            "companyCode": "1000",
+                            "year": "2023",
+                            "ledger": "L01",
+                            "glaccount": "100200002",
+                            "period": "Feb",
+                            "lc": "USD",
+                            "gc": "USD",
+                            "source": "SRC",
+                            "profitCenter": "PROFIT-001",
+                            "costCenter": "COST-001",
+                            "businessArea": "BA-001",
+                            "division": "DV",
+                            "functionalArea": "FA-001",
+                            "chartOfAccounts": "COA1"
+                        },
+                        {
+                            "companyCode": "2000",
+                            "year": "2023",
+                            "ledger": "L01",
+                            "glaccount": "200200002",
+                            "period": "Feb",
+                            "lc": "EUR",
+                            "gc": "USD",
+                            "source": "SRC",
+                            "profitCenter": "PROFIT-002",
+                            "costCenter": "COST-002",
+                            "businessArea": "BA-002",
+                            "division": "DV",
+                            "functionalArea": "FA-002",
+                            "chartOfAccounts": "COA2"
+                        }
+                    ]
+                }

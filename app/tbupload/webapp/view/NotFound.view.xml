@@ -1,0 +1,6 @@
+<mvc:View
+	controllerName="DataUpload.dataupload.controller.NotFound"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	
+</mvc:View>

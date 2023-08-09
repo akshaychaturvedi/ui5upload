@@ -1,0 +1,165 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="tbupload.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:u="sap.ui.unified">
+
+    <f:DynamicPage id="mainPage" headerExpanded="true" toggleHeaderOnTitleClick="true">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle id="pageTitle">
+                <f:heading>
+                    <Title id="headerTitle" text="Non TB Upload"></Title>
+                </f:heading>
+                <f:actions>
+                    <Button id="downloadTemplate" press="onDownloadTemplate" type="Emphasized" text="Download Template" enabled="{viewControlModel>bEnable}"></Button>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader id="pageHeader">
+                <layout:HorizontalLayout id = "headerLayout" class="sapUiResponsiveContentPadding">
+                    <!-- <u:FileUploader id="uploader"
+                                    fileType="xlsx"
+                                    multiple="false"
+                                    uploadUrl="../../service/ExcelUpload/excel"
+                                    fileAllowed="onFileAllowed"
+                                    fileEmpty=".onFileEmpty"
+                                    uploadComplete="handleUploadComplete"
+                                    typeMissmatch=".onTypeMismatch"
+                                    sendXHR="true"
+                                    useMultipart="false"
+                                    placeholder="Choose a xlsx file..."
+                                    httpRequestMethod="Put" />                 -->
+                    <u:FileUploader
+                        id="uploader"
+                        sameFilenameAllowed="true"
+                        iconOnly="false"
+                        fileType="XLSX,xlsx"
+                        iconFirst="true"
+                        buttonText="Browse"
+                        style="Emphasized"
+                        change="onFileBrowser"
+                    />                                    
+                    <Button id="previewButton" text="Preview Data" press="onPreview"/>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <!-- DynamicPage Content -->
+        <f:content>
+                        
+            <Table id="previewTable" sticky="HeaderToolbar,ColumnHeaders" inset="false" class="sapFDynamicPageAlignContent" width="auto" items="{/data}">
+                <headerToolbar>
+                    <OverflowToolbar id="tableToolbar">
+                        <Title id="tableTitle" text="Data Preview"></Title>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Company Code" />
+                    </Column>
+                    <Column>
+                        <Text text="Year" />
+                    </Column>
+                    <Column>
+                        <Text text="Ledger" />
+                    </Column>
+                    <Column>
+                        <Text text="GL Account" />
+                    </Column>
+                    <Column>
+                        <Text text="Period" />
+                    </Column>
+                    <Column>
+                        <Text text="Local Currency" />
+                    </Column>
+                    <Column>
+                        <Text text="Global Currency" />
+                    </Column>
+                    <Column>
+                        <Text text="Source" />
+                    </Column>
+                    <Column>
+                        <Text text="Profit Center" />
+                    </Column>
+                    <Column>
+                        <Text text="Cost Center" />
+                    </Column>
+                    <Column>
+                        <Text text="Business Area" />
+                    </Column>
+                    <Column>
+                        <Text text="Division" />
+                    </Column>
+                    <Column>
+                        <Text text="Functional Area" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="Chart of Accounts" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{CompanyCode}" />
+                        </cells>
+                        <cells>
+                            <Text text="{Year}" />
+                        </cells>
+                        <cells>
+                            <Text text="{Ledger}" />
+                        </cells>
+                        <cells>
+                            <Text text="{GLAccount}" />
+                        </cells>
+                        <cells>
+                            <Text text="{Period}" />
+                        </cells>
+                        <cells>
+                            <Text text="{LocalCurrency}" />
+                        </cells>
+                        <cells>
+                            <Text text="{GlobalCurrency}" />
+                        </cells>
+                        <cells>
+                            <Text text="{Source}" />
+                        </cells>
+                        <cells>
+                            <Text text="{ProfitCenter}" />
+                        </cells>
+                        <cells>
+                            <Text text="{CostCenter}" />
+                        </cells>
+                        <cells>
+                            <Text text="{BusinessArea}" />
+                        </cells>
+                        <cells>
+                            <Text text="{Division}" />
+                        </cells>
+                        <cells>
+                            <Text text="{FunctionalArea}" />
+                        </cells>
+                        <cells>
+                            <Text text="{ChartOfAccounts}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+
+        <!-- DynamicPage Footer -->
+        <f:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button id="saveButton" type="Emphasized" text="Save" press="onSave"/>
+                <Button id="cancelButton" type="Emphasized" text="Cancel" press="onCancel"/>
+            </OverflowToolbar>
+        </f:footer>
+
+    </f:DynamicPage>
+
+</mvc:View>

@@ -1,0 +1,36 @@
+{
+    "name": "tbupload",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/approuter": "^14.3.0",
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+        "@sap/html5-repo-mock": "^2.1.5",
+        "express": "^4",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "@cap-js/sqlite": "^1.1.0",
+        "@sap/cds-dk": "^7",
+        "@sap/ux-specification": "^1.108.10",
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5.1.6"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-tbupload": "cds watch --open tbupload/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy tbupload --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "cds": {
+        "requires": {
+            "db": "sqlite"
+        }
+    }
+}

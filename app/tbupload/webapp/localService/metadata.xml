@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="TBUploadService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="TrialBalance" EntityType="TBUploadService.TrialBalance"/>
+                <Singleton Name="ExcelUpload" Type="TBUploadService.ExcelUpload"/>
+            </EntityContainer>
+            <EntityType Name="TrialBalance">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="companyCode"/>
+                    <PropertyRef Name="year"/>
+                    <PropertyRef Name="ledger"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="companyCode" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="year" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="ledger" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="glaccount" Type="Edm.String" MaxLength="10"/>
+                <Property Name="period" Type="Edm.String" MaxLength="3"/>
+                <Property Name="lc" Type="Edm.String" MaxLength="3"/>
+                <Property Name="gc" Type="Edm.String" MaxLength="3"/>
+                <Property Name="source" Type="Edm.String" MaxLength="3"/>
+                <Property Name="profitCenter" Type="Edm.String" MaxLength="10"/>
+                <Property Name="costCenter" Type="Edm.String" MaxLength="10"/>
+                <Property Name="businessArea" Type="Edm.String" MaxLength="4"/>
+                <Property Name="division" Type="Edm.String" MaxLength="2"/>
+                <Property Name="functionalArea" Type="Edm.String" MaxLength="16"/>
+                <Property Name="chartOfAccounts" Type="Edm.String" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="ExcelUpload">
+                <Property Name="excel" Type="Edm.Stream"/>
+            </EntityType>
+            <Annotations Target="TBUploadService.TrialBalance/companyCode">
+                <Annotation Term="Common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/year">
+                <Annotation Term="Common.Label" String="Year"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/ledger">
+                <Annotation Term="Common.Label" String="Ledger"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/glaccount">
+                <Annotation Term="Common.Label" String="GL Account"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/period">
+                <Annotation Term="Common.Label" String="Period"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/lc">
+                <Annotation Term="Common.Label" String="Local Currency"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/gc">
+                <Annotation Term="Common.Label" String="Global Currency"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/source">
+                <Annotation Term="Common.Label" String="Source"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/profitCenter">
+                <Annotation Term="Common.Label" String="Profit Center"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/costCenter">
+                <Annotation Term="Common.Label" String="Cost Center"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/businessArea">
+                <Annotation Term="Common.Label" String="Business Area"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/division">
+                <Annotation Term="Common.Label" String="Division"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/functionalArea">
+                <Annotation Term="Common.Label" String="Functional Area"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.TrialBalance/chartOfAccounts">
+                <Annotation Term="Common.Label" String="Chart of Accounts"/>
+            </Annotations>
+            <Annotations Target="TBUploadService.ExcelUpload/excel">
+                <Annotation Term="Core.MediaType" String="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

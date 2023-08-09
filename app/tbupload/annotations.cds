@@ -1,0 +1,1 @@
+using TBUploadService as service from '../../srv/TBUploadService';
