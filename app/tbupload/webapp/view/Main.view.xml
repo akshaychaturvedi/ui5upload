@@ -10,10 +10,10 @@
         <f:title>
             <f:DynamicPageTitle id="pageTitle">
                 <f:heading>
-                    <Title id="headerTitle" text="Non TB Upload"></Title>
+                    <Title id="headerTitle" text="{i18n>title}"></Title>
                 </f:heading>
                 <f:actions>
-                    <Button id="downloadTemplate" press="onDownloadTemplate" type="Emphasized" text="Download Template" enabled="{viewControlModel>bEnable}"></Button>
+                    <Button id="downloadTemplate" press="onDownloadTemplate" type="Emphasized" text="{i18n>downloadButton}"></Button>
                 </f:actions>
             </f:DynamicPageTitle>
         </f:title>
@@ -22,18 +22,6 @@
         <f:header>
             <f:DynamicPageHeader id="pageHeader">
                 <layout:HorizontalLayout id = "headerLayout" class="sapUiResponsiveContentPadding">
-                    <!-- <u:FileUploader id="uploader"
-                                    fileType="xlsx"
-                                    multiple="false"
-                                    uploadUrl="../../service/ExcelUpload/excel"
-                                    fileAllowed="onFileAllowed"
-                                    fileEmpty=".onFileEmpty"
-                                    uploadComplete="handleUploadComplete"
-                                    typeMissmatch=".onTypeMismatch"
-                                    sendXHR="true"
-                                    useMultipart="false"
-                                    placeholder="Choose a xlsx file..."
-                                    httpRequestMethod="Put" />                 -->
                     <u:FileUploader
                         id="uploader"
                         sameFilenameAllowed="true"
@@ -44,7 +32,7 @@
                         style="Emphasized"
                         change="onFileBrowser"
                     />                                    
-                    <Button id="previewButton" text="Preview Data" press="onPreview"/>
+                    <Button id="previewButton" text="{i18n>previewButton}" press="onPreview"/>
                 </layout:HorizontalLayout>
             </f:DynamicPageHeader>
         </f:header>
@@ -53,54 +41,51 @@
         <f:content>
                         
             <Table id="previewTable" sticky="HeaderToolbar,ColumnHeaders" inset="false" class="sapFDynamicPageAlignContent" width="auto" items="{/data}">
-                <headerToolbar>
-                    <OverflowToolbar id="tableToolbar">
-                        <Title id="tableTitle" text="Data Preview"></Title>
-                    </OverflowToolbar>
-                </headerToolbar>
+                
                 <columns>
                     <Column>
-                        <Text text="Company Code" />
+                        <Text text="{i18n>companyCode}" />
                     </Column>
                     <Column>
-                        <Text text="Year" />
+                        <Text text="{i18n>year}" />
                     </Column>
                     <Column>
-                        <Text text="Ledger" />
+                        <Text text="{i18n>ledger}" />
                     </Column>
                     <Column>
-                        <Text text="GL Account" />
+                        <Text text="{i18n>glAccount}" />
                     </Column>
                     <Column>
-                        <Text text="Period" />
+                        <Text text="{i18n>period}" />
                     </Column>
                     <Column>
-                        <Text text="Local Currency" />
+                        <Text text="{i18n>localCurrency}" />
                     </Column>
                     <Column>
-                        <Text text="Global Currency" />
+                        <Text text="{i18n>globalCurrency}" />
                     </Column>
                     <Column>
-                        <Text text="Source" />
+                        <Text text="{i18n>source}" />
                     </Column>
                     <Column>
-                        <Text text="Profit Center" />
+                        <Text text="{i18n>profitCenter}" />
                     </Column>
                     <Column>
-                        <Text text="Cost Center" />
+                        <Text text="{i18n>costCenter}" />
                     </Column>
                     <Column>
-                        <Text text="Business Area" />
+                        <Text text="{i18n>businessArea}" />
                     </Column>
                     <Column>
-                        <Text text="Division" />
+                        <Text text="{i18n>division}" />
                     </Column>
                     <Column>
-                        <Text text="Functional Area" />
+                        <Text text="{i18n>functionalArea}" />
                     </Column>
                     <Column hAlign="End">
-                        <Text text="Chart of Accounts" />
+                        <Text text="{i18n>chartOfAccounts}" />
                     </Column>
+
                 </columns>
                 <items>
                     <ColumnListItem >
@@ -155,11 +140,13 @@
         <f:footer>
             <OverflowToolbar>
                 <ToolbarSpacer/>
-                <Button id="saveButton" type="Emphasized" text="Save" press="onSave"/>
-                <Button id="cancelButton" type="Emphasized" text="Cancel" press="onCancel"/>
+                <Button id="saveButton" type="Emphasized" text="{i18n>saveButton}" press="onSave"/>
+                <Button id="cancelButton" type="Default" text="{i18n>cancelButton}" press="onCancel"/>
             </OverflowToolbar>
         </f:footer>
 
     </f:DynamicPage>
 
 </mvc:View>
+
+
